@@ -84,24 +84,15 @@ O objetivo é fornecer **um pipeline completo**, replicável e totalmente funcio
 
 ---
 
-# 🧱 **3. Arquitetura geral**
+# **3. Arquitetura geral**
 
-```
-Treinamento (Keras)
-        ↓
-Conversão p/ TFLite
-        ↓
-Quantização (INT8)
-        ↓
-Compatibilização p/ TFLM
-        ↓
-Gerar C Array (model_data.cc)
-        ↓
-Build ESP-IDF (C/C++)
-        ↓
-Flash no ESP32-S3
-        ↓
-Inferência embarcada
+```mermaid
+graph LR
+A[Treinamento Keras] --> B[Conversão .tflite]
+B --> C[Quantização INT8]
+C --> D[Conversão Hex xxd]
+D --> E[Firmware C++ ESP-IDF]
+E --> F[Inferência no ESP32-S3]
 ```
 
 ---
@@ -131,7 +122,7 @@ ESP32_TinyML
 
 ---
 
-# 🧰 **5. Requisitos**
+# **5. Requisitos**
 
 ## 🔌 **Hardware**
 
@@ -354,6 +345,9 @@ Modelos maiores falham mesmo se houver RAM livre.
 
 * **Conversão TFLite:**
   [https://www.tensorflow.org/lite/convert](https://www.tensorflow.org/lite/convert)
+
+* **Link de Compra**
+   [https://www.makerhero.com/produto/placa-esp32-s3-devkitc/:](https://www.makerhero.com/produto/placa-esp32-s3-devkitc/)
 
 ---
 
