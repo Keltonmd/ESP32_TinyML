@@ -60,12 +60,12 @@ Com isso, é possível realizar inferências de modelos CNN diretamente no micro
 
 Este repositório apresenta:
 
-✓ Código-fonte completo em C/C++ para ESP-IDF
-✓ Modelos treinados (MobileNetV2, MobileNetV3 e modelo customizado)
-✓ Arquivos `.tflite` (normal, quantizado, dinâmico*)
-✓ Conversão para C array (`model_data.cc`)
-✓ Notebooks de treinamento
-✓ Análises de desempenho e memórias
+✓ Código-fonte completo em C/C++ para ESP-IDF<br>
+✓ Modelos treinados (MobileNetV2, MobileNetV3 e modelo customizado)<br>
+✓ Arquivos `.tflite` (normal, quantizado, dinâmico*)<br>
+✓ Conversão para C array (`model_data.cc`)<br>
+✓ Notebooks de treinamento<br>
+✓ Análises de desempenho e memórias<br>
 
 ---
 
