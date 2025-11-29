@@ -335,17 +335,14 @@ Modelos maiores falham mesmo se houver RAM livre.
 
 # 🔗 **13. Recursos e links úteis**
 
-esp-tflite-micro (1.3.5):
-<a href="https://github.com/espressif/esp-tflite-micro/tree/v1.3.5" target="_blank">https://github.com/espressif/esp-tflite-micro/tree/v1.3.5
-</a>
+* **esp-tflite-micro (1.3.5):**
+  [https://github.com/espressif/esp-tflite-micro/tree/v1.3.5](https://github.com/espressif/esp-tflite-micro/tree/v1.3.5)
 
-Documentação ESP-IDF:
-<a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html" target="_blank">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html
-</a>
+* **Documentação ESP-IDF:**
+  [https://docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
 
-Conversão TFLite:
-<a href="https://www.tensorflow.org/lite/convert" target="_blank">https://www.tensorflow.org/lite/convert
-</a>
+* **Conversão TFLite:**
+  [https://www.tensorflow.org/lite/convert](https://www.tensorflow.org/lite/convert)
 
 ---
 
