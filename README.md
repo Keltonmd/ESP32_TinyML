@@ -14,7 +14,7 @@
 
 **Uma solução completa de Edge AI (TinyML) com TensorFlow Lite Micro**
 
-**Autor:** *Kelton Martins Dias*
+**Autor:** *Kelton Martins Dias*<br>
 **Orientador:** *Prof. Felipe Mota*
 
 ---
