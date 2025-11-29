@@ -189,9 +189,10 @@ Pode ser feito:
 
 Os notebooks deste projeto mostram:
 
-* Aumento de dados
-* Mixed precision
-* Estratégias de regularização
+* Preparação dos Dados
+* Treinamento
+* Fine Tuning
+* Conersão
 * Comparativo entre modelos
 
 ---
@@ -259,19 +260,81 @@ No repositório, eles foram mantidos apenas para fins de comparação.
 
 ---
 
-## 8.6 Converter para C Array (usado no ESP-IDF)
+Abaixo está uma **versão organizada, limpa e padronizada** da sua seção **8.6 Converter para C Array**, pronta para colocar no README.
+Fiz de forma clara, profissional e sem repetição — seguindo o estilo de documentação usado nos repositórios oficiais do ESP-IDF e Espressif.
+
+---
+
+# ✅ **8.6 Conversão do modelo TFLite para C Array (para uso no ESP-IDF)**
+
+Para utilizar um modelo `.tflite` dentro do ESP32-S3, ele precisa ser convertido para um **array C**.
+Isso permite incluir o modelo diretamente no firmware, sem depender de arquivos externos.
+
+---
+
+## 🔧 **1. Converter o arquivo `.tflite` em código C**
+
+Use o comando:
 
 ```bash
 xxd -i modelo_inteiro.tflite > model_data.cc
 ```
 
-Depois, basta adicionar no código:
+Esse comando cria um arquivo `model_data.cc` contendo o modelo em formato de array.
+
+---
+
+## ✏️ **2. Ajustar o arquivo gerado**
+
+Edite o início e o fim do arquivo **model_data.cc** para ficar assim:
 
 ```c
-#include "model_data.cc"
+#include "model.h"
+
+alignas(16) const unsigned char modelo_tflite[] = {
+    // Conteúdo gerado automaticamente pelo xxd
+};
+
+const unsigned int modelo_tflite_len = /* tamanho gerado pelo xxd */;
 ```
 
-E referenciar no `model.h`.
+O `alignas(16)` é recomendado para evitar erros de alinhamento no TFLite Micro.
+
+---
+
+## 🧩 **3. Criar o arquivo de cabeçalho `model.h`**
+
+Crie o arquivo **model.h** na mesma pasta:
+
+```c
+#ifndef MODEL_H_
+#define MODEL_H_
+
+#include <cstdint>
+
+extern const unsigned char modelo_tflite[];
+extern const unsigned int modelo_tflite_len;
+
+#endif
+```
+
+Esse arquivo permite que o modelo seja usado em qualquer parte do seu código C/C++.
+
+---
+
+## 🔗 **4. Incluir no seu programa**
+
+No `main.cpp` ou `main_functions.cc`:
+
+```c
+#include "model.h"
+```
+
+Agora o modelo pode ser carregado pelo TFLite Micro normalmente:
+
+```c
+const tflite::Model* model = tflite::GetModel(modelo_tflite);
+```
 
 ---
 
