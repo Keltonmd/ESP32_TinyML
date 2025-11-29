@@ -1,5 +1,17 @@
 # 🌟 **ESP32_TinyML – Inferência de Redes Neurais no ESP32-S3**
 
+<p align="left">
+  <img src="https://img.shields.io/badge/ESP32_S3-Espressif-E7352C?style=for-the-badge&logo=espressif&logoColor=white" />
+  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
+  <img src="https://img.shields.io/badge/TFLite_Micro-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/ESP--IDF-000000?style=for-the-badge&logo=espressif&logoColor=white" />
+ 
+</p>
+
 **Uma solução completa de Edge AI (TinyML) com TensorFlow Lite Micro**
 
 **Autor:** *Kelton Martins Dias*
@@ -98,24 +110,23 @@ Inferência embarcada
 
 ```
 ESP32_TinyML
-├─ Esp32S3
-│  ├─ CMakeLists.txt
-│  └─ main
-│     ├─ CMakeLists.txt
-│     ├─ idf_component.yml
-│     ├─ main.cpp
-│     ├─ main_functions.cc
-│     ├─ main_functions.h
-│     ├─ model.h
-│     └─ model_data.cc
-├─ LICENSE
-├─ Modelos
-│  ├─ Customizado
-│  ├─ V2
-│  └─ V3
-└─ Treinamento
-   ├─ CNN_Lite.ipynb
-   └─ CNN_Lite_limpo.ipynb
+├── Esp32S3                  # Firmware principal (ESP-IDF Project)
+│   ├── CMakeLists.txt
+│   └── main
+│       ├── CMakeLists.txt
+│       ├── idf_component.yml # Gerenciador de dependências (TFLM)
+│       ├── main.cpp          # Entry point (app_main)
+│       ├── main_functions.cc # Setup do TFLite e Loop de inferência
+│       ├── model.h           # Cabeçalho do modelo
+│       └── model_data.cc     # Modelo treinado convertido em byte array
+├── Modelos                  # Arquivos .keras e .tflite gerados
+│   ├── Customizado
+│   ├── V2 (MobileNetV2)
+│   └── V3 (MobileNetV3)
+├── Treinamento              # Jupyter Notebooks
+│   ├── CNN_Lite.ipynb       # Notebook completo
+│   └── CNN_Lite_limpo.ipynb # Versão otimizada para visualização
+└── LICENSE
 ```
 
 ---
